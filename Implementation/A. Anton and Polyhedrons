@@ -1,0 +1,62 @@
+Link to Problem: https://codeforces.com/problemset/problem/785/A
+
+Anton's favourite geometric figures are regular polyhedrons. Note that there are five kinds of regular polyhedrons:
+
+Tetrahedron. Tetrahedron has 4 triangular faces.
+Cube. Cube has 6 square faces.
+Octahedron. Octahedron has 8 triangular faces.
+Dodecahedron. Dodecahedron has 12 pentagonal faces.
+Icosahedron. Icosahedron has 20 triangular faces.
+
+Input
+4
+Icosahedron
+Cube
+Tetrahedron
+Dodecahedron
+
+output
+42
+
+c++ solution:
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int side(char c)
+{
+	switch(c)
+	{
+		case 'T' : return 4;
+		case 'C' : return 6;
+		case 'I' : return 20;
+		case 'O' : return 8;
+		case 'D' : return 12;
+		
+	}
+	
+	return 0;
+}
+ 
+int sum = 0;
+ 
+void solve()
+{
+	string str;
+	cin >> str;
+	
+	sum += side(str[0]);
+}
+ 
+int main() {
+	
+	int t;
+	cin >> t;
+	
+	while(t--)
+	{
+		solve();
+	}
+	cout << sum;
+	
+	return 0;
+}
