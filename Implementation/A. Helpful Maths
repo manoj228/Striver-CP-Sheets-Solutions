@@ -1,0 +1,68 @@
+Link to problem : https://codeforces.com/problemset/problem/339/A
+
+Problem Statement :
+Xenia the beginner mathematician is a third year student at elementary school. She is now learning the addition operation.
+
+The teacher has written down the sum of multiple numbers. Pupils should calculate the sum. 
+To make the calculation easier, the sum only contains numbers 1, 2 and 3. Still, that isn't enough for Xenia. She is only beginning to count, 
+so she can calculate a sum only if the summands follow in non-decreasing order. For example, she can't calculate sum 1+3+2+1 but she can calculate sums 1+1+2 and 3+3.
+
+You've got the sum that was written on the board. Rearrange the summans and print the sum in such a way that Xenia can calculate the sum.
+
+Example1:
+Input:
+1+1+3+1+3
+
+Output:
+1+1+1+3+3
+
+C++ Solution:
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+void solve()
+{
+	string str;
+	cin >> str;
+	
+	if(str.size() == 1){
+		cout << str;
+		return;
+	}
+	
+	int n= str.size();
+	vector<int> res;
+	
+	for(int i = 0; i < n; i += 2)
+	{
+		res.push_back(str[i] - '0');
+	}
+	
+	sort(res.begin(), res.end());
+	
+	str = "";
+	
+	for(int i = 0; i <= n/2; i++)
+	{
+		str += to_string(res[i]);
+		
+		if(i < n/2)
+		str += '+';
+	}
+	
+	cout << str;
+}
+ 
+int main() {
+	
+	int t = 1;
+	
+	while(t--)
+	{
+		solve();
+		cout << endl;
+	}
+	
+	return 0;
+}
