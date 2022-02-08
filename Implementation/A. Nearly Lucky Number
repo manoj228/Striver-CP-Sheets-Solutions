@@ -1,0 +1,55 @@
+Link to problem : https://codeforces.com/problemset/problem/110/A
+
+Problem Statement :
+Petya loves lucky numbers. We all know that lucky numbers are the positive integers whose decimal representations contain only the lucky digits 4 and 7. 
+For example, numbers 47, 744, 4 are lucky and 5, 17, 467 are not.
+
+Unfortunately, not all numbers are lucky. Petya calls a number nearly lucky if the number of lucky digits in it is a lucky number.
+He wonders whether number n is a nearly lucky number.
+
+Example1:
+Input:
+40047
+
+Output:
+NO
+
+Example2:
+Input:
+7747774
+
+Output:
+YES
+
+C++ solution:
+#include <bits/stdc++.h>
+using namespace std;
+ 
+void solve()
+{
+	string str;
+	cin >> str;
+	
+	int c = 0, n = str.size();
+	
+	for(int i = 0; i < n ; i++) 
+	{
+		if(str[i] == '4' || str[i] == '7') c++;
+	}
+	
+	if(c == 4 || c == 7) cout << "YES";
+	else cout << "NO";
+	
+}
+ 
+int main() {
+	
+	int t = 1;
+	
+	while(t--)
+	{
+		solve();
+	}
+	
+	return 0;
+}
