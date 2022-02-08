@@ -1,0 +1,58 @@
+Link to problem : https://codeforces.com/problemset/problem/791/A
+
+Problem Statement :
+Bear Limak wants to become the largest of bears, or at least to become larger than his brother Bob.
+
+Right now, Limak and Bob weigh a and b respectively. It's guaranteed that Limak's weight is smaller than or equal to his brother's weight.
+
+Limak eats a lot and his weight is tripled after every year, while Bob's weight is doubled after every year.
+
+After how many full years will Limak become strictly larger (strictly heavier) than Bob?
+
+Example1:
+Input:
+4 9
+
+Output:
+3
+
+Example2:
+Input:
+1 1
+
+Output:
+1
+
+C++ Solution:
+#include <bits/stdc++.h>
+using namespace std;
+
+void solve()
+{
+	int a, b;
+	cin >> a >> b;
+	
+	int c = 0;
+	
+	while(a <= b)
+	{
+		a *= 3;
+		b *= 2;
+		c++;
+	}
+	
+	cout << c;
+}
+
+int main() {
+	
+	int t = 1;
+	
+	while(t--)
+	{
+		solve();
+		cout << endl;
+	}
+	
+	return 0;
+}
