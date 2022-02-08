@@ -1,0 +1,49 @@
+Link to problem : https://codeforces.com/problemset/problem/281/A
+
+Problem Statement :
+Capitalization is writing a word with its first letter as a capital letter. Your task is to capitalize the given word.
+
+Note, that during capitalization all the letters except the first one remains unchanged.
+
+Example1:
+Input:
+ApPLe
+
+Output:
+ApPLe
+
+Example2:
+Input:
+konjac
+
+Output:
+Konjac
+
+
+C++ Solution:
+#include <bits/stdc++.h>
+using namespace std;
+
+void solve()
+{
+	string str;
+	cin >> str;
+	
+	if(str[0] >= 97 && str[0] <= 122)
+	str[0] = str[0] - 32;
+	
+	cout << str ;
+}
+
+int main() {
+	
+	int t = 1;
+	
+	while(t--)
+	{
+		solve();
+		cout << endl;
+	}
+	
+	return 0;
+}
