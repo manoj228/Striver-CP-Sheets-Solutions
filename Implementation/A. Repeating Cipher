@@ -1,0 +1,68 @@
+Link to Problem:  https://codeforces.com/problemset/problem/1095/A
+
+Problem Statement: 
+Polycarp loves ciphers. He has invented his own cipher called repeating.
+
+Repeating cipher is used for strings. To encrypt the string s=s1s2…sm (1≤m≤10), Polycarp uses the following algorithm:
+
+he writes down s1 ones,
+he writes down s2 twice,
+he writes down s3 three times,
+...
+he writes down sm m times.
+For example, if s="bab" the process is: "b" → "baa" → "baabbb". So the encrypted s="bab" is "baabbb".
+
+Given string t — the result of encryption of some string s. Your task is to decrypt it, i. e. find the string s.
+
+
+Input:
+10
+ooopppssss
+
+output:
+oops
+
+C++ Solution:
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	
+	int n;
+	cin >> n;
+	
+	string str, res = "";
+	cin >> str;
+	
+	int s = 0;
+	for(int i = 0; s + i < n; i++)
+	{
+		s += i;
+		res += str[s];
+	}
+	
+	cout << res;
+	
+	return 0;
+}#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	
+	int n;
+	cin >> n;
+	
+	string str, res = "";
+	cin >> str;
+	
+	int s = 0;
+	for(int i = 0; s + i < n; i++)
+	{
+		s += i;
+		res += str[s];
+	}
+	
+	cout << res;
+	
+	return 0;
+}
