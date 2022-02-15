@@ -1,0 +1,57 @@
+Link to Problem: https://codeforces.com/problemset/problem/1430/C
+
+Problem Statement: 
+Numbers 1,2,3,…n (each integer from 1 to n once) are written on a board. 
+In one operation you can erase any two numbers a and b from the board and write one integer a+b2 rounded up instead.
+
+You should perform the given operation n−1 times and make the resulting number that will be left on the board as small as possible.
+
+For example, if n=4, the following course of action is optimal:
+
+choose a=4 and b=2, so the new number is 3, and the whiteboard contains [1,3,3];
+choose a=3 and b=3, so the new number is 3, and the whiteboard contains [1,3];
+choose a=1 and b=3, so the new number is 2, and the whiteboard contains [2].
+It's easy to see that after n−1 operations, there will be left only one number. Your goal is to minimize it.
+
+Input:
+1
+4
+
+output:
+2
+2 4
+3 3
+3 1
+
+
+C++ Solution:
+#include <bits/stdc++.h>
+using namespace std;
+
+void solve()
+{
+	int n;
+	cin >> n;
+	
+	cout << "2" << endl;
+	cout << n << " " << n-1 << endl;
+	
+	for(int i = n; i > 2; i--)
+	{
+		cout << i-2 << " " << i << endl;
+	}
+} 
+
+int main() {
+	
+	int t ;
+	cin >> t;
+	
+	while(t--)
+	{
+		solve();
+		cout << endl;
+	}
+ 
+  return 0;
+}
