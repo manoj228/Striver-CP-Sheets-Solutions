@@ -41,9 +41,7 @@ void solve(){
   
   sort(arr.begin(), arr.end());
   
-  int mid = (2*n) / 2;
-  
-  cout << abs(arr[mid] - arr[mid-1]) ;
+  cout << abs(arr[n] - arr[n-1]) ;
   
   
 } 
