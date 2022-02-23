@@ -1,0 +1,63 @@
+Link to Problem: https://codeforces.com/problemset/problem/1141/A
+
+Problem Statement: 
+olycarp plays "Game 23". Initially he has a number n and his goal is to transform it to m. In one move, he can multiply n by 2 or multiply n by 3. 
+He can perform any number of moves.
+
+Print the number of moves needed to transform n to m. Print -1 if it is impossible to do so.
+
+It is easy to prove that any way to transform n to m contains the same number of moves (i.e. number of moves doesn't depend on the way of transformation).
+
+Input1:
+120 51840
+
+output1:
+7
+
+Input2:
+48 72
+
+Output2:
+-1
+
+C++ Solution:
+#include<bits/stdc++.h>
+using namespace std;
+
+
+void solve()
+{
+	int n, m;
+	cin >> n >> m;
+	
+	int c = 0;
+	
+	while(n < m)
+	{
+		if(m % (2*n) == 0)
+			n *= 2;
+		else 
+			n *= 3;
+		
+		c++;
+	}
+	
+	if(n != m) cout << "-1";
+	else
+	cout << c;
+} 
+
+
+int main(){
+	
+	int testCases=1;
+	//cin >> testCases;
+	
+	while(testCases--)
+	{
+		solve();
+		cout << endl;
+	}
+	
+	return 0;
+}
