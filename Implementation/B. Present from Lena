@@ -33,8 +33,7 @@ output:
       0
 
 
-C++ Solution:
-
+C++ Solution1:
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -110,4 +109,23 @@ int main(){
 	}
 	
 	return 0;
+}
+
+
+
+C++ Solution2:
+#include<iostream>
+#include<cmath>
+using namespace std;
+int n,i,j,k;
+int main(){
+cin>>n;
+for(j=0; j<=2*n;j++){
+i=n-abs(j-n);
+k=0;
+while(k<n-i){cout<<"  "; k++;}
+k=i;
+while(k>-i){cout<<i-abs(k)<<" ";k--; }
+cout<<0<<endl;}
+return 0;
 }
