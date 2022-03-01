@@ -1,0 +1,49 @@
+Link to Problem: https://codeforces.com/problemset/problem/476/A
+
+Problem Statement: 
+Dreamoon wants to climb up a stair of n steps. He can climb 1 or 2 steps at each move. Dreamoon wants the number of moves to be a multiple of an integer m.
+
+What is the minimal number of moves making him climb to the top of the stairs that satisfies his condition?
+
+Inputs    -> outputs:
+10   2    -> 6
+3    5    -> -1
+1000 2    -> 5000
+
+
+C++ Solution:
+#include<bits/stdc++.h>
+using namespace std;
+
+void solve()
+{
+	int n, m;
+	cin >> n >> m;
+	
+	if(n < m)
+		cout << "-1";
+	else
+	{
+		// to make multiple of 2 
+		// why ? + 1 => adding 1 for odd number to make it even
+		int k = (n + 1) / 2;
+		
+		// to make multiple of m , / and * by m
+		cout << (k + m - 1) / m * m;		
+	}
+	
+}
+
+int main(){
+	
+	int testCases = 1;
+	//cin >> testCases;
+	
+	while(testCases--)
+	{
+		solve();
+		cout << endl;
+	}
+	
+	return 0;
+}
