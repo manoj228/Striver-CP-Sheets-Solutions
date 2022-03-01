@@ -1,0 +1,59 @@
+Link to Problem: https://codeforces.com/problemset/problem/1373/A
+
+Problem Statement: 
+There are two rival donut shops.
+
+The first shop sells donuts at retail: each donut costs a dollars.
+
+The second shop sells donuts only in bulk: box of b donuts costs c dollars. 
+So if you want to buy x donuts from this shop, then you have to buy the smallest number of boxes such that the total number of donuts in them is greater or equal to x.
+
+You want to determine two positive integer values:
+
+how many donuts can you buy so that they are strictly cheaper in the first shop than in the second shop?
+how many donuts can you buy so that they are strictly cheaper in the second shop than in the first shop?
+If any of these values doesn't exist then that value should be equal to −1. If there are multiple possible answers, then print any of them
+
+Input:
+4
+5 10 4
+4 5 20
+2 2 3
+1000000000 1000000000 1000000000
+
+output:
+-1 20
+8 -1
+1 2
+-1 1000000000
+
+C++ Solution:
+#include<bits/stdc++.h>
+using namespace std;
+
+void solve()
+{
+	int a, b, c;
+	cin >> a >> b >> c;
+	
+	if(a >= c) cout << "-1 ";
+	else cout << "1 ";
+	
+	if(c/b < a) cout << b;
+	else cout << "-1";
+	
+}
+
+int main(){
+	
+	int testCases ;
+	cin >> testCases;
+	
+	while(testCases--)
+	{
+		solve();
+		cout << endl;
+	}
+	
+	return 0;
+}
